@@ -1,0 +1,260 @@
+ACCESS_HAS_ACCESS:<1> already has <2> status on <3>.
+ACCESS_LACKS_ACCESS:<1> does not have <2> status on <3>.
+COMMAND_BAD_PASSWORD:The specified password was incorrect.
+COMMAND_CHANNEL_DROPPED:<1> is no longer a registered channel.
+COMMAND_CHANNEL_EMPTY:<1> is currently empty, this command would have no effect.
+COMMAND_CHANNEL_NOT_REGISTERED:<1> must be registered with <2> to use this command.
+COMMAND_CHANNEL_NOT_REGISTERED:To register <1>, see /msg <chanserv> HELP REGISTER
+COMMAND_CHANNEL_INVALID:Please specify a valid channel name.
+COMMAND_ERROR:An internal error occurred while trying to process this command, please try again.
+COMMAND_INVALID_EMAIL:Please specify a valid e-mail address.
+COMMAND_INVALID_PASSWORD:Please specify a valid password for this command.
+COMMAND_INVALID_NICKNAME:The username is too long, please specify a valid nickname.
+COMMAND_NICKNAME_DROPPED:<1>, and all nicknames linked to it has been dropped.
+COMMAND_NO_ACCESS:You have insufficient access to use this command.
+COMMAND_NO_CHANNEL:Please specify a valid channel name for this command.
+COMMAND_NO_CHANNEL_ACCESS:You have insufficient access to <1> to use this command.
+COMMAND_NO_FILENAME:No filename was specified. This command requires a filename.
+COMMAND_NO_HOSTNAME:No hostname was specified. This command requires a hostname.
+COMMAND_NO_NICKNAME:No username specified. Please specify a nickname for this command.
+COMMAND_NO_PERMISSION:You lack permission to use this command.
+COMMAND_NICKNAME_NOT_REGISTERED:<1> is not a registered nickname. A registered nickname is required for this command.
+COMMAND_NOT_FOUND:You have entered an invalid command. For a full list of commands, type <1> <2> help
+COMMAND_NOT_JOINED:You must join <1> to use this command.
+COMMAND_NOT_IDENTIFIED:You must be identified to a registered nickname to use this command.
+COMMAND_NOT_IDENTIFIED:You may use /msg <NickServ> help register and /msg <NickServ> help identify for more information about registering and logging in to your nickname.
+COMMAND_NOT_IN_CHANNEL:This command may not be used from within a channel. You will need to message the service directly.
+COMMAND_ONE_NICKNAME:Please enter only one nickname at a time for this command.
+COMMAND_USER_NOT_IN_CHANNEL:<1> is not currently in <2>.
+COMMAND_USER_NOT_JOINED:You must first join <1> in order to use this command.
+COMMAND_USER_OFFLINE:No user named <1> is currently online.
+COMMAND_CONFIG_REHASHED:The configuration file has been successfully reloaded.
+COMMAND_CONFIG_NO_PASSWORDS:This command may not be used to get or set passwords.
+COMMAND_AJOIN_CHANNEL_ADDED:<1> has been added to your auto-join list.
+COMMAND_AJOIN_CHANNEL_CLEARED:Your auto-join list has been cleared.
+COMMAND_AJOIN_CHANNEL_CLEARED:Note that if your IRC client has its own auto-join list, you may wish to clear it.
+COMMAND_AJOIN_CHANNEL_EXISTS:<1> is already on your auto-join list.
+COMMAND_AJOIN_LIST_START:Showing auto-join list for <1>:
+COMMAND_EXTRA_BASIC_RESULT:Rolled a six-sided die, and received a <1>.
+COMMAND_EXTRA_MODIFIER_TOO_BIG:The modifier you specified is too large, using <2> instead.
+COMMAND_EXTRA_ODD_OPERATION:<1> is not a recognised operation. Please use either addition, subtraction or multiplication.
+COMMAND_EXTRA_ROLL_COUNT:Rolling <1> dice with <2> sides.
+COMMAND_EXTRA_TOO_MANY_DICE:This command cannot be used for a dice with more than <1> dice.
+COMMAND_EXTRA_TOO_MANY_SIDES:This command cannot be used for a dice with more than <1> sides.
+COMMAND_GHOST_DISCONNECTED:<1> has been disconnected.
+COMMAND_GHOST_SELF_KILL:You may not ghost-kill yourself.
+COMMAND_HELP_BEGIN_CATEGORY:Showing all help available for <1>:
+COMMAND_HOSTS_ACCESS_BEGIN:The following users have access to this vHost:
+COMMAND_HOSTS_EMPTY:There are no vHost groups in use.
+COMMAND_HOSTS_GROUP_DROPPED:The specified hostname has been dropped, users will no longer have access to it.
+COMMAND_HOSTS_GROUP_EXISTS:<1> is already an existing hostname group.
+COMMAND_HOSTS_GROUP_NOT_ADMIN:You must be a group admin of <1> to use this command.
+COMMAND_HOSTS_GROUP_NOT_FOUND:The hostname you requested was not found on the list of allowed hostnames.
+COMMAND_HOSTS_HOSTNAME_CHANGED:Your hostname has been changed to <1>.
+COMMAND_HOSTS_INFO_NAME:Host: <1>
+COMMAND_HOSTS_INFO_REQUEST:Requested by <1> and approved by <2>
+COMMAND_HOSTS_NEW_HOST_PENDING:Your vHost group has been requested. It will be activated or denied pending a staff decision.
+COMMAND_HOSTS_NEW_HOST_GROUP:The new vHost group has been created.
+COMMAND_HOSTS_NO_HOST_GIVEN:Please specify a hostname to add.
+COMMAND_HOSTS_USER_NOT_FOUND:<1> was not found in the access list for <2>.
+COMMAND_INFO_CS_IN_USE:<1> is in use (<2> users, <3> bots).
+COMMAND_INFO_CS_TOPIC:Channel topic: <1>
+COMMAND_INFO_CS_TOPIC:Topic set: <2> by <3>
+COMMAND_INFO_CS_NO_TOPIC:Channel topic: Not set
+COMMAND_INFO_NS_IRCOP:<1> is an IRC operator (IRC Network Staff)
+COMMAND_INFO_NS_OFFLINE:<1> is not currently online.
+COMMAND_INFO_NS_ONLINE:<1> is currently online as <2>@<3> (<4>).
+COMMAND_INFO_NS_NOT_REGISTERED:<1> is not a registered nickname.
+COMMAND_INFO_REGISTERED_DATE:Date registered: <2>
+COMMAND_INVITE_ALREADY_THERE:You are already on <1>, no invite is necessary.
+COMMAND_LIST_CS_OCCUPIED:Showing occupied channels
+COMMAND_LIST_CS_REGISTERED:Showing registered channels
+COMMAND_LIST_NS_CONNECTED:Showing connected nicknames
+COMMAND_LIST_NS_REGISTERED:Showing registered nicknames
+COMMAND_LIST_NO_CHANNELS:No channels found.
+COMMAND_LOCK_NO_PASSWORD:A password is needed to lock <1>.
+COMMAND_LOCK_INVALID_PASSWORD:Please specify a valid password to lock <1>. It may not contain spaces or commas, and must be under 24 characters.
+COMMAND_LOCK_SET:<1> is now locked. Users will need to enter this password after the channel name in order to join the channel.
+COMMAND_MEMO_RECEIVED:You received a new memo from <1> at <2>:
+COMMAND_MEMO_RECEIVED:<2>
+COMMAND_NO_MEMO:This memo does not exist. It may have been deleted.
+COMMAND_MODE_SET:Mode(s) <2> have been set on <1>.
+COMMAND_MODE_NO_MODES:Please specify a valid list of modes.
+COMMAND_MODE_UMODE_NO_MODES:Please specify a valid list of modes.
+COMMAND_MODE_UMODE_NO_TARGET:Please enter a valid username and the modes you would like to set.
+COMMAND_MODLOAD_BAD_FILENAME:<1> is an invalid filename for this system.
+COMMAND_MODLOAD_FILE_MISSING:<1> was not found in the commands directory.
+COMMAND_MODLOAD_NO_PERMISSION:<1> was not accessible, possibly due to a file permissions error.
+COMMAND_MODLOAD_FILE_INVALID:<1> does not appear to be a valid Ezri extension. This can occur with older extensions, in which case they should be recompiled.
+COMMAND_MODLOAD_FILE_CANCEL:<1> was loaded, but requested an unload. The extension may have logged the reason for this, check the log file for more information.
+COMMAND_MODLOAD_FILE_SUCCESS:<1> was successfully loaded.
+COMMAND_MODLOAD_FILE_UNKNOWN:Warning: <1>'s success state was unable to be determined. The extension may not be loaded.
+COMMAND_MODLOAD_ALREADY_LOADED:<1> has already been loaded.
+COMMAND_MODLOAD_SELF_UNLOAD:<1> is not able to unload itself.
+COMMAND_MODLOAD_UNLOAD_SUCCESS:<1> was successfully unloaded.
+COMMAND_MODLOAD_UNLOAD_FAILURE:<1> was not able to be unloaded, check the error log for more information.
+COMMAND_MODLOAD_NOT_LOADED:<1> has not been loaded, or was already unloaded.
+COMMAND_MODLOAD_NO_EXTENSIONS:No extensions currently loaded.
+COMMAND_QUEUE_ACCEPT_NEW:You have taken request ID #N(TBW)
+COMMAND_QUEUE_ACCEPT_
+COMMAND_QUEUE_ACCEPT_TAKEN:<1> is already being helped by <2>.
+COMMAND_QUEUE_ACCEPT_YOURS:You are already helping <1>.
+COMMAND_QUEUE_CLOSE_DONE:The ticket from <1> has been closed.
+COMMAND_QUEUE_CLOSE_OWN_DONE:Your ticket has been marked as closed.
+COMMAND_QUEUE_CLOSE_HELPER:<1> is being helped by <2>, you are unable to close this ticket without reassigning it.
+COMMAND_QUEUE_CLOSE_NEW:The ticket from <1> cannot be closed as no helper has been assigned to them.
+COMMAND_QUEUE_INFO_MESSAGES:The following messages are attached to this ticket:
+COMMAND_QUEUE_INFO_OPENED:Opened:     <1>
+COMMAND_QUEUE_INFO_PICKUP:Picked up:  <1> by <2>
+COMMAND_QUEUE_INFO_USER:Ticket #N(TBW)
+COMMAND_QUEUE_INFO_USER:Created by: <1> (<2>@<3>)
+COMMAND_QUEUE_LIST_END:<1> tickets currently active.
+COMMAND_QUEUE_NO_OPEN_TICKET:You must have an open help ticket to use this command.
+COMMAND_QUEUE_NO_TICKET:<1> has not opened a help ticket.
+COMMAND_QUEUE_NO_TICKETS:There are currently no tickets in the help queue.
+COMMAND_QUEUE_NO_QUEUE:All users are currently being assisted.
+COMMAND_QUEUE_NO_QUEUE:To change a user's helper, see the TRANSFER command.
+COMMAND_QUEUE_TAKEN:<1> has already been assigned to <2>.
+COMMAND_QUEUE_TRANSFERRED:<1> is now being helped by <2>.
+COMMAND_QUEUE_UPDATE_MAXIMUM:You have reached the maximum number of messages that may be attached to a ticket. No new information may be added.
+COMMAND_QUEUE_UPDATE_SUCCESS:Your ticket has been updated.
+COMMAND_QUEUE_USER_OFFLINE:<1> is not currently connected to IRC.
+COMMAND_REGISTER_NOT_OPERATOR:You must be a channel operator of <1> in order to register it.
+COMMAND_REGISTER_BAD_PASSWORD:You may not use your nickname as a password.
+COMMAND_REGISTER_CS_IS_TAKEN:<1> has already been registered with <2>.
+COMMAND_REGISTER_ID_FAILURE:Invalid nickname/password combination. You may have entered an incorrect password or your nickname may not be registered.
+COMMAND_REGISTER_ID_FAILURE:If you were trying to register a new nickname, see /msg <1> help register
+COMMAND_REGISTER_ID_SUCCESSFUL:You have logged in successfully.
+COMMAND_REGISTER_NS_IS_TAKEN:<1> has already been registered. If it was registered by you, use /msg <2> IDENTIFY <u>password</u> in order to log in.
+COMMAND_REGISTER_REGISTERED:<1> has been registered to you.
+COMMAND_REGISTER_SUCCESS:Your nickname has been registered under the address <1>
+COMMAND_SAY_NO_MESSAGE:Please specify a message to send.
+COMMAND_SAY_NO_TARGET:Please specify a target to send the message to.
+COMMAND_USERLIST_EMPTY:There are no users on the %s access list.
+COMMAND_USERLIST_ACCESS_LIMIT:Users on the access list must have levels between 1 and 1000
+COMMAND_USERLIST_NO_ACCESS:You do not have access to manipulate the access list for <1>.
+COMMAND_USERLIST_ALREADY_ADDED:<1> is already on the user list for <2> at level <3>.
+COMMAND_USERLIST_DUMMY_ACCOUNT:<1> is a dummy account, and may only be given access to channels by network staff.
+COMMAND_USERLIST_SUCCESSFUL_ADD:<1> has been added to the <2> access list, at level <3>.
+HELP_ACCESS_VOICE_SYNTAX:(DE)VOICE #channel <u>nickname</u>
+HELP_ACCESS_VOICE_DESCRIBE:Temporarily grants or removes voice status for the user on the specified channel. This will last until the user is later devoiced or leaves the channel.
+HELP_ACCESS_VOICE_DESCRIBE:To permanently give status to users, see the user list commands.
+HELP_ACCESS_HALFOP_SYNTAX:(DE)HALFOP #channel <u>nickname</u>
+HELP_ACCESS_HALFOP_DESCRIBE:Temporarily grants or removes halfop status for the user on the specified channel. This will last until the user has halfop status removed or leaves the channel.
+HELP_ACCESS_HALFOP_DESCRIBE:To permanently give status to users, see the user list commands.
+HELP_ACCESS_OP_SYNTAX:(DE)OP #channel <u>nickname</u>
+HELP_ACCESS_OP_DESCRIBE:Grants temporary operator status for the user on the specified channel. This will last until the user has operator status removed or leaves the channel.
+HELP_ACCESS_ADMIN_SYNTAX:(DE)ADMIN #channel <u>nickname</u>
+HELP_ACCESS_ADMIN_DESCRIBE:Grants temporary administrator status for the user on the specified channel. This will last until the user has administrator status removed or leaves the channel.
+HELP_ACCESS_OWNER_SYNTAX:(DE)OWNER #channel <u>nickname</u>
+HELP_ACCESS_OWNER_DESCRIBE:Grants temporary owner status for the user on the specified channel. This will last until the user has owner status removed or leaves the channel.
+HELP_AJOIN_ADD_SYNTAX:AJOIN ADD <u>#channels</u>
+HELP_AJOIN_ADD_DESCRIBE:Adds the specified channels to the auto-join list.
+HELP_AJOIN_ADD_DESCRIBE:Multiple channels may be specified with commas, e.g. #channel1,#channel2
+HELP_AJOIN_CLEAR_SYNTAX:AJOIN CLEAR
+HELP_AJOIN_CLEAR_DESCRIBE:Clear all channels from the auto-join list.
+HELP_AJOIN_DEL_SYNTAX:AJOIN DEL <u>#channel</u>
+HELP_AJOIN_DEL_DESCRIBE:Removes the specified channels from the auto-join list.
+HELP_AJOIN_DEL_DESCRIBE:Multiple channels may be specified with commas, e.g. #channel1,#channel2
+HELP_AJOIN_LIST_SYNTAX:AJOIN LIST
+HELP_AJOIN_LIST_DESCRIBE:Lists the channels currently set to be auto-joined.
+HELP_BAN_BAN_SYNTAX:BAN #channel <u>hostmask</u>
+HELP_BAN_BAN_DESCRIBE:Bans a user from the specified channel. He or she will not be able to join if there is an active ban on them.
+HELP_BAN_BAN_DESCRIBE:The "mask" may be specified as a nickname, in which case the hostmask will be determined automatically. Otherwise, it will use the given full or partial hostmask.
+HELP_CONFIG_REHASH_SYNTAX:REHASH
+HELP_CONFIG_REHASH_DESCRIBE:Reloads the configuration file, allowing any changes made to take effect.
+HELP_CONFIG_SETTING_SYNTAX:SETTING config::setting
+HELP_CONFIG_SETTING_DESCRIBE:Get the value of a configuration setting.
+HELP_DROP_CS_SYNTAX:DROP #channel
+HELP_DROP_CS_DESCRIBE:Drops the specified channel. The access list and other channel-related information will be lost.
+HELP_DROP_CS_DESCRIBE:This command <u>cannot</u> be undone.
+HELP_DROP_NS_SYNTAX:DROP [password]
+HELP_DROP_NS_DESCRIBE:Drops your current nickname, along with all linked nicknames. All data attached to a nickname will be lost.
+HELP_DROP_NS_DESCRIBE:This command <u>cannot</u> be undone.
+HELP_HOSTS_ADDHOST_SYNTAX:ADDHOST <u>host.name</u>
+HELP_HOSTS_ADDHOST_DESCRIBE:Adds the given hostname to the list of permitted host groups, you will be marked as the group leader.
+HELP_HOSTS_ADDUSER_SYNTAX:ADDUSER <u>host.name</u> <u>user.name</u>
+HELP_HOSTS_ADDUSER_DESCRIBE:Adds a registered nickname to the access list for the specified hostname.
+HELP_HOSTS_ADDUSER_DESCRIBE:Users are able to choose to use any hostname that they appear on the access list for, and must use the <u>USE</u> command to select the hostname after being added.
+HELP_HOSTS_DELHOST_SYNTAX:DELHOST <u>host.name</u>
+HELP_HOSTS_DELHOST_DESCRIBE:Deletes the host group, including the access list.
+HELP_HOSTS_DELUSER_SYNTAX:DELUSER <u>host.name</u> <u>username</u>
+HELP_HOSTS_DELUSER_DESCRIBE:Deletes a user from a host group's access list.
+HELP_HOSTS_INFO_SYNTAX:INFO <u>host.name</u>
+HELP_HOSTS_INFO_DESCRIBE:Shows detailed information about the hostname, such as the user who registered it and the access list.
+HELP_HOSTS_LIST_SYNTAX:LIST
+HELP_HOSTS_LIST_DESCRIBE:Lists all the hostname groups, along with their group leader.
+HELP_HOSTS_REQUEST_SYNTAX:REQUEST <u>host.name</u> [<u>Description here</u>]
+HELP_HOSTS_REQUEST_DESCRIBE:Requests a new vHost group. A short description of the vHost group can also be added, which will be available to other users.
+HELP_HOSTS_SETHOST_SYNTAX:SETHOST <u>nickname</u> <u>host.name</u>
+HELP_HOSTS_SETHOST_DESCRIBE:Changes the user's vHost to the given hostname. The hostname will not be added to the list of host groups.
+HELP_HOSTS_USEHOST_SYNTAX:USE <u>host.name</u>
+HELP_HOSTS_USEHOST_SYNTAX:Sets your vHost to the given hostname. The host must be a valid host group.
+HELP_HOSTS_NS_SYNTAX:SET HOST <u>nickname</u> <u>host.name</u>
+HELP_HOSTS_NS_DESCRIBE:Sets a registered user's vHost to the given hostname.
+HELP_INFO_CS_SYNTAX:ChanServ INFO #channel
+HELP_INFO_CS_DESCRIBE:Shows detailed registration information about the specified channel.
+HELP_INFO_NS_SYNTAX:INFO <u>nickname</u>
+HELP_INFO_NS_DESCRIBE:Shows detailed registration information about the specified nickname.
+HELP_INVITE_SYNTAX:INVITE <1>
+HELP_INVITE_DESCRIBE:Invites yourself to the specified channel.
+HELP_KICK_SYNTAX:KICK #channel <u>nickname</u> [reason]
+HELP_KICK_DESCRIBE:Kicks a user from the channel with the specified reason.
+HELP_KILL_SYNTAX:KILL <u>nickname</u> [reason]
+HELP_KILL_DESCRIBE:Disconnect a user from IRC with the specified reason.
+HELP_LOAD_EXTENSIONS_SYNTAX:EXTENSIONS [all]
+HELP_LOAD_EXTENSIONS_DESCRIBE:Lists the loaded third-party extensions.
+HELP_LOAD_EXTENSIONS_DESCRIBE:The full list of loaded extensions, including officially-supported extensions, can be obtained with the ALL parameter.
+HELP_LOAD_LOAD_SYNTAX:LOAD <u>filename</u>
+HELP_LOAD_LOAD_DESCRIBE:Loads the specified extension into memory, allowing it to be used by Ezri.
+HELP_LOAD_UNLOAD_SYNTAX:UNLOAD <u>extension_name</u>
+HELP_LOAD_UNLOAD_DESCRIBE:Unloads the specified extension, calling the extension's unload routine in the process.
+HELP_LOCK_SYNTAX:LOCK #channel <u>password</u>
+HELP_LOCK_DESCRIBE:Locks the channel with the given password. Users must use /join <1> password in order to join the channel.
+HELP_LOCK_DESCRIBE:The password may not contain spaces or commas.
+HELP_NICKPROTECT_GHOST_SYNTAX:GHOST <u>Nickname</u> <u>Password</u>
+HELP_NICKPROTECT_GHOST_DESCRIBE:Disconnect a user using your registered nickname. The password is the password used to identify to your nickname.
+HELP_NOT_AVAILABLE:There is no help available for this topic.
+HELP_NO_CLIENT_HELP:There is no help available for <1>.
+HELP_QUEUE_ACCEPT_SYNTAX:ACCEPT [<u>nickname</u>]
+HELP_QUEUE_ACCEPT_DESCRIBE:Picks up a pending HelpServ ticket from the queue.
+HELP_QUEUE_ACCEPT_DESCRIBE:If a nickname is given, the specified user will be picked up from the queue. With no nickname, the next user in the queue will be helped.
+HELP_QUEUE_CLOSE_SYNTAX:CLOSE [<u>nickname</u>]
+HELP_QUEUE_CLOSE_DESCRIBE:Closes your help ticket, indicating that no further help is required.
+HELP_QUEUE_CLOSE_DESCRIBE:Helpers may also close the ticket of someone they are helping, to mark their help session as over.
+HELP_QUEUE_LIST_SYNTAX:LIST
+HELP_QUEUE_LIST_DESCRIBE:Lists the currently open tickets, and who they are assigned to.
+HELP_QUEUE_TRANSFER_SYNTAX:TRANSFER <u>ticket</u> <u>helper</u>
+HELP_QUEUE_TRANSFER_DESCRIBE:Transfers the help ticket from one helper to another, informing both users in the process.
+HELP_QUEUE_UPDATE_SYNTAX:UPDATE <u>message</u>
+HELP_QUEUE_UPDATE_DESCRIBE:Attaches additional information to the help ticket for helpers to review.
+HELP_REGISTER_CS_SYNTAX:REGISTER #channel
+HELP_REGISTER_CS_SYNTAX:Registers your channel with the services, allowing you to retain ownership of it. You may also invite ChanServ to the channels you would like registered instead.
+HELP_REGISTER_CS_SYNTAX:You will need to be identified to a registered nickname, see /msg <1> HELP REGISTER
+HELP_REGISTER_IDENTIFY_SYNTAX:IDENTIFY <u>password</u> email@address
+HELP_REGISTER_IDENTIFY_DESCRIBE:Logs in (Identifies) your nickname with the services, allowing you to regain your channel access.
+HELP_REGISTER_IDENTIFY_DESCRIBE:You need to have created a registered nickname to use this command, see /msg <client> HELP REGISTER
+HELP_REGISTER_CS_SYNTAX:Note that channels on this network expire after 30 days of inactivity.
+HELP_REGISTER_NS_SYNTAX:REGISTER <u>nickname</u> email@address
+HELP_REGISTER_NS_DESCRIBE:Registers your nickname with the services, lets you register channels and more.
+HELP_REGISTER_NS_DESCRIBE:You will need to identify to your account each time you connect.
+HELP_REGISTER_NS_DESCRIBE:Note that nicknames on this network expire after 30 days of inactivity.
+HELP_USERLIST_ADD_SYNTAX:USERLIST add #channel <u>nickname</u> <u>level</u>
+HELP_USERLIST_ADD_DESCRIBE:Add a user to the channel's access list, at the specified level.
+HELP_USERLIST_ADD_DESCRIBE:The level defines how much the user can do on the channel, it must be a number between 1 and 1000. A higher level user is able to do more than a lower level user, users at certain levels may receive statuses on the channel.
+QUEUE_ASSIGNED:You have been assigned a helper for your ticket!
+QUEUE_ASSIGNED:Your helper's nickname is <1>
+QUEUE_NEW_TICKET:Your list of open tickets has been modified by <1>.
+QUEUE_NEW_TICKET:You are now marked as helping <2>, in addition to any other tickets you may have open.
+QUEUE_NEW_HELPER:Your ticket has been reassigned to <2>, who is now your active helper.
+QUEUE_TICKET_UPDATE:The ticket from <1> has been updated with new information.
+QUEUE_USER_CLOSED_TICKET:<1> has marked their ticket as closed, and has been removed from the help queue.
+QUEUE_USER_JOIN:<2>, you have entered the help queue for <1>.
+QUEUE_USER_JOIN:There are currently <3> other tickets in the queue.
+QUEUE_USER_PART:<2>, you have left <1> and its associated help queue.
+QUEUE_USER_PART:Rejoining the channel will allow you to open an additional help ticket if you require further assistance.
+QUEUE_USER_KICK:<2>, you have been kicked from <1> and therefore have been removed from the help queue. 
+QUEUE_USER_KICK:Depending on the reason for your kick, you may be able to open an additional ticket later by rejoining the channel.
+NICKNAME_PROTECTED:This is a protected nickname, please identify to it using /msg <2> identify <u>password</u>
+NICKNAME_PROTECTED:If you do not identify within 20 seconds, your nickname will be changed.
+NICKNAME_CHANGE:Your nickname is now being changed to <1>.

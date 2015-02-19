@@ -1,0 +1,859 @@
+Ezri-Changelog [Commenced 22/03/2009]
+
+0.4-alpha
+[22nd Mar 2009]
+[Extension] Userlist would not always free response 
+[Extension] Rewrote umode.c, no feature changes.
+
+[13th Apr 2009]
+[Core] New message struct for better handling of data
+[Core] alloc.c to replace extensions.c
+[Core] Rewrite of many of the token functions
+[Core] Removed _extension functions
+[Extension] Rewrote say.c, requires IRCop status to "say" to a user.
+[Extension] say.c can no longer message unregistered channels.
+[Client] Removed double seek in nickserv.c
+
+[18th Apr 2009]
+[Extensions] All extensions synched besides help.c (Requires more extension work)
+
+[24th Apr 2009]
+[Core] strncpy_safe was modifying the wrong character
+[Core] Now understands changes to a user's realname, vHost, and ident
+[Unreal] Support for realname, vHost and ident in both SET* and CHG*
+
+[25th Apr 2009]
+[Unreal] Some user and channel modes used incorrect sender information.
+[Core] Token functions failed on a single character from a larger string.
+[Core] Added chr_delete function to remove characters from a string.
+[Core] Removed useless code for usermode removal
+
+[27th Apr 2009]
+[Core] parse_timestring to turn times (e.g. 1d30m) into seconds
+
+[29th Apr 2009]
+[Core] strcmp_wildcards for checking matches on a banmask
+
+[30th Apr 2009]
+[Core] Fixed warnings caused by token functions
+[Core] Speed boosts in alloc.c under some circumstances
+[Core] Token functions now skip extra spaces
+[Core] Allow the sending of vHosts and vIdents
+[Core] Added message_rewind to rewind the message to the start
+[Core] message_seek now allows a negative seek
+
+[1st May 2009]
+[Extension] hosts.c for changing user hosts
+[Core] Began moving socket code from ircd handler into sockets.c
+[Core] Removed a lot of duplicate declarations from header files
+[Core] Actual connection phase is now handled by the IRCd extension.
+
+0.5-alpha
+
+[1st May 2009]
+[Core] Fixed potential overflow of message struct
+
+[2nd May 2009]
+[Extension] identify.c will reject users logging in from a channel target
+
+[5th May 2009]
+[Core] strpos and stripos now return ptrdiff_t instead of int
+[Core] Fixed crash issue on free in stripos
+
+[6th May 2009]
+[Core] New config.c to parse configuration files for use in Ezri
+
+[8th May 2009]
+[Core] Added functions to fetch and remove configuration settings
+
+[9th May 2009]
+[Core] Now using "connect" config block to handle connection details
+
+[12th May 2009]
+[Core] New ezri_socket struct for detailed socket information
+[Core] Massive speed-ups to synching code
+[Core] Untested IPv6 connectivity
+
+[14th May 2009]
+[Core] Services clients are now loaded from svsclient config block
+[Core] Configurable in-channel triggers now available
+
+[15th May 2009]
+[Core] Can now define the services routine through the config file
+[Core] Fixed regression with implied targets.
+[Core] Fixed old warnings in   nickserv.c, message.c and users.c
+[Config] Register::RegisterChannels affects channel registration permissions
+[Config] Register::RegisterNicknames affects nickname registration permissions
+[Config] Access::EnableHalfops setting allows disabling of "HALFOP" command
+[Config] Access::EnableAdmins setting to allow disabling of "ADMIN" command
+[Config] Access::EnableOwners setting to allow disabling of "OWNER" command
+[Core] Config lines starting with # or // are now comments.
+[Core] Functions for removing registered nicknames.
+
+[22nd May 2009]
+[Unreal] Changed the way tokens are handled to fix "quirks" in 3.2.8 and below
+[Unreal] Added support to send invite command
+
+[23rd May 2009]
+[Unreal] Support for PART events was present but unused
+[Unreal] Truncated mode parameters fixed
+[Core] A leaving channel user would remove data on all channels
+[Extensions] Added "invite" extension for registered channels.
+
+[24th May 2009]
+[Unreal] Suppport to create events for services clients on channel invite
+
+[25th May 2009]
+[Core] (Regression) Fixed nulls being passed to events
+[Core] Adding multiple events was broken
+[Extension] Channels may now be registered by inviting ChanServ to the channel
+[Unreal] Crash on modes set without parameters
+[Core] Support for channel limits
+
+[26th May 2009]
+[Core] Now keeping track of a channel's current modes.
+[Unreal] Support for channel kicks
+[Unreal] Fixed many (minor) potential crash issues on malformed server messages
+
+[27th May 2009]
+[Core] Explicit support for channel passwords (mode +k)
+
+[28th May 2009]
+[Core] drop_channel function logic error corrected
+[Core] Channeluser searching faster than before
+
+[30th May 2009]
+[Routine] ChanServ no longer messages the user on every channel message.
+[Core] Crash if the original user parted a channel.
+[Routine] ChanServ will now forward commands to the relevant service.
+
+[31st May 2009]
+[Routine] ChanServ would react to a channel message that begun with a command.
+[Extension] Access extensions would react improperly if no username was given.
+[Extension] Added devoice/dehalfop/deop/deadmin/deowner to access extension.
+[Extension] Fixed logic errors in userlist extension.
+[Unreal] Join event would not always be fired when applicable
+[Unreal] ChanServ clients will grant the appropriate status when a user joins.
+
+[1st June 2009]
+[Routine] Implied targets were not active in channels.
+[Extension] Say extension logic rewritten.
+[Extension] Using a user as a target now requires a hyphen prefix (say -user)
+
+[2nd June 2009]
+[Core] Some functions would loop indefinitely if it could not find the user.
+[Extension] Invite extension would not send a reply in most cases.
+
+[18th June 2009]
+[Extension] Userlist add command written for speed on large networks.
+[Core] Extensions will be unloaded if they fail to load.
+[Core] Removed unnecessary code from str_replace.
+[Core] Changed the declarations of many string functions.
+[Core] Default ChanServ levels determined by ChanServ::Levels::Setting
+[Core] New "invite", "access", "is_voice", "is_halfop", "can_cs_ban" settings.
+
+[19th June 2009]
+[Extension] Missing argument to sprintf in modload.c
+[Extension] Added unload function for extensions to OperServ.
+
+[20th June 2009]
+[Core] Fixed odd behaviour and possible memory leak when deleting a command.
+
+[21st June 2009]
+[Core] Extensions now use their own extension_unload to delete commands, etc.
+[Extension] Added unload routines to "register" command.
+[Core] Fixed known memory leak in events.c when deleting a timer.
+[Extension] Added unload routines to "invite" and "access" commands.
+[Extension] Removed umode.c
+[Extension] OperServ mode command now allows changing the modes of a user.
+[Extension] Unload command works for either extension names or filenames.
+[Unreal] Possible mode desynch when tokens are not in use.
+[Unreal] Now keeping track of sent modes.
+[Config] Added RETURN_BLOCK config type
+[Config] Fixed several potential crashes when accessing non-existent settings.
+[Core] Fixed a possible buffer overrun with hostnames.
+[Core] Possible crash when making services clients.
+
+[22nd June 2009]
+[Core] strtolower no longer allocates memory. 
+[Core] strtoupper no longer allocates memory. 
+
+[23rd June 2009]
+[Core] Rewrote all the major internal help functions
+[Extension] New help command to retrieve extension help.
+
+[24th June 2009]
+[Extension] Added OFFICIAL_EXTENSION define to denote official extension.
+[Routine] Default routine now fires svsclient_ctcp, not svsclient_receive_ctcp.
+
+[25th June 2009]
+[Core] Adding more than two timer functions would fail.
+[Core] More flexible definitions for event and timer functions.
+[Core] Fixed a crash when unloading configuration key/value pairs.
+[Extension] Rehash function fixed.
+[Extension] Added OperServ kill command.
+[Core] Fixed crash by loading a new extension after unloading a previous one.
+[Core] Fixed identical crash when adding a new command.
+[Core] Commands and help names are now converted to uppercase first.
+
+[26th June 2009]
+[Unreal] Desynch when sending a kill via services.
+[Unreal] Though not handled, incorrect comparison was being done for part-all.
+[Unreal] PRIVMSG, JOIN not sending tokens when tokens are enabled.
+
+[27th June 2009]
+[Core] Client type was not previously stored, corrected.
+[Core] Added ability to add a command to all clients using a certain routine.
+[Core] Added ability to add a command to all clients of a certain type.
+[Core] Using multiple "load" commands in the configuration is now supported.
+[Core] Much faster string handling commands added.
+[Extension] Added OperServ commands to get configuration settings.
+
+[28th June 2009]
+[Core] Bug and memory leak in adding commands by type/routine fixed.
+[Unreal] Added ability to send notices via services clients.
+[Core] Added ability to add help to all clients of a certain type.
+[Core] str_replace re-fixed.
+[Extension] Help command returned no message when no help was available.
+
+[29th June 2009]
+[Extension] Memory leak in OperServ kill extension.
+[Unreal] Added basic support for SJOIN command.
+
+[30th June 2009]
+[Extension] Access autostatus didn't check whether the user was identified.
+[Extension] Non-IRCops may only use say with ChanServ clients.
+
+[2nd July 2009]
+[Core] Fixed case where config blocks may not be returned.
+[Core] Fixed possible memory leak when getting config values.
+[Extension] Added verification that the user may manipulate the userlist.
+[Core] Will no longer register a nickname if it already exists.
+
+[5th July 2009]
+[Core] Added support for "simple" database format.
+[Core] Added config setting "db_format" to control default database format.
+
+
+[6th July 2009]
+[Extension] Hosts extension exports data to database.
+[Extension] Added retrieval operations for hosts extension.
+
+[8th July 2009]
+[Core] strto(upper/lower) will no longer crash on null strings.
+[Extension] Registered nicknames now imported into Ezri on startup.
+
+[9th July 2009]
+[Extension] No message was given when trying to register a nickname in use.
+
+[16th July 2009]
+[Core] Ezri will no longer crash when failing to establish a connection.
+[Extension] Channels are now imported into Ezri on startup.
+
+[22nd July 2009]
+[Extension] List no longer crashes on load.
+
+[24th July 2009]
+[Core] Fixed being able to re-register the last-registered nickname.
+[Extension] Added help to "register" commands.
+[Extension] Rewrote register command initialiser to be svsclient independent.
+[Core] Routines are now added by name, not by filename.
+[Core] Extensions now use message_user function to send messages to user.
+[Core] Improved start-up time.
+[Core] Services will now reply via notices by default.
+[Extension] No text sent when loading an extension that was already loaded.
+[Routine] Support for CTCPs in SVS_Regular
+[Core] Functions for sending CTCPs and replies
+[Core] Identifying now allows for a username that differs from the nickname.
+[Extension] Identify command merged into register command.
+[Unreal] Fixed memory leak when sending kill commands.
+[Unreal] Added support for sending kick commands.
+[Extension] Fixed crash bug when restoring unlocked channels.
+[Extension] Fixed incorrect row count when restoring channels.
+[Unreal] Faster token handling for most events.
+[Unreal] SERVER commands were not being interpreted.
+[Unreal] Proper support for VL option.
+[Unreal] Proper support for NS option.
+[Core] Storing Ezri information in "ezri" struct.
+[Core] No longer sends the wrong server name when introducing nicknames.
+
+[25th July 2009]
+[Extension] Use internal register functions for importing channels.
+[Extension] Use internal register functions for importing nicknames.
+[Extension] The assigned channel bot will now join the channel on startup.
+[Extension] Added CS Kick command.
+[Core] Fixed certain clearly-invalid addresses being marked as valid.
+[Core] Crash if invalid PART was interpreted.
+[Core] Check str_replace wrapper for valid memory allocation.
+[Core] get_config now supports RETURN_INT and recognises "on" and "off" as 0/1
+
+[26th July 2009]
+[Core] Simplified config grabbing when registering a new channel.
+[Routine] Fixed possible crash with insufficient permissions.
+[Extension] "Owner" command linked to wrong help data.
+
+[27th July 2009]
+[Extension] Fixed wrong commnd listed in "op" help
+[Core] Changed the parameter order in config value grabbing.
+
+[28th July 2009]
+[Unreal] match_token gives faster results.
+[Core] Using native string functions for skip_chars
+[Core] Fixed benign overflow when making a new connection
+[Core] Optimisation of skip_string
+[Unreal] Possible crash on empty string from server.
+[Core] Rewrote e-mail validation function
+[Core] Removed strpos in favour of native string functions.
+[Core] Events now use varargs arguments directly.
+
+[29th July 2009]
+[Core] parse_message no longer assumes a particular message format.
+[Core] Removed memory allocations where unnecessary from users.c
+[Core] Channels now store the ban list.
+[Unreal] Interpret bans from SJOIN and MODE commands
+
+[30th July 2009]
+[Core] Removed casts from str_replace_
+[Core] Use "bans" for excepts and invexes, too.
+[Unreal] Interpret excepts and invexes from SJOIN and SMODE.
+[Core] General improvement of e-mail validation function.
+
+[31st July 2009]
+[Core] create_banmask function for turning addresses into bans.
+[Core] Moved some length definitions to strings.h
+[Core] valid_banmask function to check that a banmask is valid.
+[Core] Return impossible access levels on empty channels, not zero.
+[Core] ChanServ "BAN" command added to ban nicknames from channels.
+[Core] Bad increment in case_compare_length caused comparison to fail.
+[Core] Fix for possible match on slightly differing strings.
+[Core] Issue fixed which caused second userlist command to be skipped.
+[Extension] Subsequent reads of registered channel list would fail.
+
+[1st August 2009]
+[Extension] Channel userlists are now imported and exported.
+[Extension] Checking permissions for the wrong user in userlist add
+[Extension] Autostatus would not check if the user was identified or not.
+
+[2nd August 2009]
+[Core] No timers were being fired due to blocking sockets.
+[Core] Fixed possible crash when freeing a timer.
+[Extension] Added TBAN command to ban extension.
+
+[4th August 2009]
+[Unreal] Wrong function used in ircd_capab
+[Unreal] Wrong token used in SJOIN
+[Unreal] Owners and admins using the wrong prefixes in SJOIN
+[Core] New function for PRNG-range
+[Core] Timers now build the unique ID themselves based on a "group" name.
+[Core] Fixed a possible crash when adding a new timer.
+[Core] Fixed a bug when banning a user that wasn't connected.
+
+[5th August 2009]
+[Core] First argument to a timer is always the timer ID
+[Core] Return 0 if timer could not be added.
+[Core] Invalid user would crash user_identified
+[Unreal] Send SVSNICK tokenised when tokens are enabled.
+
+[6th August 2009]
+[Extension] Properly randomise target nickname in nickprotect.c
+
+[7th August 2009]
+[Extension] Nickname protection also triggers when a user connects.
+[Extension] Ghost::GhostClient defines which client reacts for ghost events.
+
+[14th August 2009]
+[Unreal] Unused hostname validator did not allow IPv6 hostnames.
+[Core] is_reg_user was not available to extensions.
+[Core] Much faster configuration file parsing.
+
+[16th August 2009]
+[Core] MAX_FILENAME not needed - FILENAME_MAX is part of the C standard.
+
+[24th August 2009]
+[Database] Add error flag to check whether a write operation succeeded.
+[Database] Added db_append to append a single row.
+[Extension] Reversion with identification in access.c
+
+[30th August 2009]
+[Core] Added some GNU CC stubs to main.h and commands.h
+[Core] Some headers were included twice, removed and ordered alphabetically.
+[Core] Several useful functions were not exposed to extensions.
+
+[31st August 2009]
+[Core] Cross-platform loading of extensions.
+[Core] Removed several related, unnecessary code segments in channels.c
+[Core] config.c is not an extension, remove extension_unload from it.
+[Core] Ezri would crash if the configuration file did not exist.
+[Core] Added some extra debugging information for unloaded extensions.
+[Core] Crash when trying to load a routine that didn't exist.
+[Core] Fixed three uses of strtoupper that could crash under gcc compilation.
+[Core] Fixed a possible double free in db_simple.
+[Core] GCC compilation successful.
+
+0.7-beta
+
+[1st September 2009]
+[Core] Display the full path to ezri.conf that we're checking.
+[Extension] Add version data to all extensions.
+
+[2nd September 2009]
+[Core] Fix potential memory leaks.
+[Unreal] Fix potential memory leaks.
+[Core] Ability to remove a command from all routines.
+[Extension] Fixed compilation issues and potential crash in kill extension.
+
+[3rd September 2009]
+[Core] Use a static buffer for IRC messages.
+[Extension] Info command was printing the wrong variable.
+[Extension] Info command did not show the date at which a topic was set.
+[Extension] Fixed potential crash if no ghost client was set.
+[Core] Added notification if a client routine was not loaded.
+
+[6th September 2009]
+[Core] Fixed bug when parsing hash-comments in config file.
+[Core] Minor improvement to config file read speed.
+[Core] Fixed create_path to use a buffer passed as an argument.
+[Core] Fixed a crash when a missing key was requested from the configuration.
+[Core] New language string support via language.c.
+
+[9th September 2009]
+[Core] Wrong variable used to output paths on failure.
+[Core] Fixed many bugs in the new language support.
+[Extension] Rewrote access extension to use new language support.
+
+[10th September 2009]
+[Core] Partial bugfix for limitations of get_config function.
+[Core] Display the attempted hostname and port when connection fails.
+
+[14th September 2009]
+[Core] Added multi-line string support to the language core.
+
+[16th September 2009]
+[Core] Don't escape arguments in the language core if we don't have to.
+[Extension] Don't show a user's real hostname unless they have no vHost.
+[Extension] Add extended help for ChanServ INVITE command.
+[Extension] Re-ordered kick command evaluation for users without access.
+[Core] Language parser no longer parses arguments that aren't used.
+
+[17th September 2009]
+[Extension] Speed improvements to list commands.
+[Core] Fixed potential crash when freeing a help command.
+[Core] Use the correct function for deleting help.
+[Core] If help is not added, return a failure in create_help
+[Core] svs_add_help_by_type now returns the total number of help items added.
+[Core] Fixed a potential crash when adding a command.
+[Extension] Lock did not check whether the user was identified.
+[Extension] Fixed possible memory leak in ghost command.
+[Extension] Ghost command would always try to send from "NickServ".
+
+[18th September 2009]
+[Extension] Add identification checks to HostServ extension.
+[Extension] Add identification checks to MemoServ extension.
+[Core] Added functions for messaging users without using the language core.
+[Extension] All extensions now compile with the new language core.
+
+[26th September 2009]
+[Core] Better memory allocation for the language core.
+
+[1st October 2009]
+[Core] Ezri is now capable of storing the server map from its perspective.
+[Core] Potential crash when a server changes the vHost.
+[Extension] Hosts is now two-tier based on HostServ-type presence.
+[Extension] Fixed possible out-of-bounds issue in Hosts.
+
+[2nd October 2009]
+[Extension] Hosts file would not close the database after loading it.
+[Extension] Hosts now uses HOST_MAX to determine the maximum host length.
+[Extension] Added help to Hosts commands.
+[Core] is_identified may now be used as a command restriction.
+[Extension] Store the vHost requested by the user.
+[Extension] Allow new SET command to work for both HostServ-style tiers.
+[Extension] If the user has a vHost, set it when they identify.
+
+[11th October 2009]
+[Extension] Wrong variable used in NickServ INFO command.
+[Extension] REGISTER help contained typo.
+[Extension] Wrong language name used in ChanServ INFO command.
+
+[13th October 2009]
+[Extension] NickServ-tier Hosts now use "SET HOST", not "SETHOST".
+
+[15th October 2009]
+[Core] Replace empty tokens in language core with empty strings.
+
+[21st October 2009]
+[Core] Infinite loop could occur when dropping a command by type.
+[Core] Fixed crash when unloading extensions.
+[Core] Invite command would crash if the channel did not exist.
+[Core] Possible crash when checking if a channel is registered.
+
+[23rd October 2009]
+[Core] Dropping a command by type was still broken - Wrong comparison.
+[Core] Previously unable to drop a command from all clients via type drop.
+[Extension] Merged extensions list with modload.c
+
+[24th October 2009]
+[Core] compare_to string function for comparing up until a specific character
+
+[26th October 2009]
+[Core] copy_to function to copy to the first occurrence of a certain character.
+[Unreal] Improved speed of token handling, reduced function calls.
+[Core] Allowed some longer e-mail addresses to be used.
+
+[29th October 2009]
+[Core] General speed up of several heavily-used string functions.
+[Core] Changed the failure behaviour of some string functions.
+[Unreal] Fixed several wrong assumptions about UnrealIRCd protocol.
+[Unreal] Speed increases when handling messages from the server.
+
+[1st November 2009]
+[Core] Fixed signed/unsigned mismatch in copy_to
+[Extension] Fixed untranslated message in mode.c, deleted umode.c
+
+[3rd November 2009]
+[Core] Fixed Windows compilation.
+[Extension] Wrong help text in lock extension.
+
+[9th February 2010]
+[Core] Commenced Ezri development for 2010
+[Unreal] Add handling of remote VERSION requests
+[Unreal] PROTOTCL handling was doing some needless comparisons
+[Core] Ezri server description was not being stored anywhere.
+[Core] Added more descriptive extension error messages.
+
+[11th February 2010]
+[Core] Fixed a crash if the description could not be found.
+
+[14th February 2010]
+[Unreal] Further optimisation when tokens are enabled
+[Core] Re-implementation of many minor speed increases.
+[Core] Fixed some functions being in incorrect header files.
+
+[17th February 2010]
+[Core] Fixed two possible startup crash issues in language core.
+
+[18th February 2010]
+[Unreal] Faster message handling, also fixes parsing bug.
+[Core] Simplified config file for faster processing.
+[Extension] Fixed crash in help extension.
+[Routine] Fixed issue where pointer was not being advanced.
+
+[20th February 2010]
+[Extensions] Invite now sends correct message when a channel is not registered.
+[Extensions] Register extension was not storing nickname and channel database.
+[Extensions] No longer attempting to access freed pointer on extension unload.
+
+[22nd February 2010]
+[Core] Fixed two unlikely startup crashes and unexpected behaviours.
+[Core] Added error messages when parts of the connect block are missing.
+[Core] Added additional checks on the port range and server name.
+[Core] Added port and server link information to Ezri internals.
+[Core] Cleaned up initialisation routine.
+[Core] Fixed a shutdown crash due to freeing an invalid pointer.
+[Core] Fixed load order so that clients could send data before synching.
+[Core] Fixed second load order issue that caused help extension not to work.
+[Extensions] Never show syntax when the identify command is used in a channel.
+[Extensions] HostServ extension wasn't flushing the database contents to disk.
+
+[23rd February 2010]
+[Core] Added function for storing dates portably.
+[Extensions] Proper retrieval of dates from the database in register extension.
+
+[24th February 2010]
+[Core] Added ability to import and export timestamps across architectures.
+
+[1st March 2010]
+[Extensions] Ghost command no longer available in a channel.
+[Database] Fix possible but unlikely crash in db_simple.c
+[Core] Changed a few types to deal with larger networks.
+[Core] Allow extensions to export multiple pieces of data.
+
+[4th March 2010]
+[Core] Possible to attach extension data to users and registered users.
+[Core] Function for getting a registered nickname in use.
+[Unreal] Fixed double check for SVSKILL, added SVSJOIN and SVSPART.
+[Unreal] ircd_send_join will now work for regular users, too.
+
+[5th March 2010]
+[Core] Speed and correctness improvements to IRCd protocol extensions.
+[Unreal] CHGNAME was being treated as a vHost change. SETHOST was fine.
+[Unreal] New event triggered when a user joins a channel during a synch.
+[Core] Changed channel_add_user to take a User struct, not a string.
+[Core] Removed some repeat code from channels.c
+
+[6th March 2010]
+[Core] Implied target is now rejected if it contains commas.
+[Core] Speed up of code that handles implied targets.
+
+
+[7th March 2010]
+[Core] copy_to returned the wrong number of bytes when the match wasn't found.
+[Core] Fixed massive overflow in channel data due to wrong counter being used.
+
+[8th March 2010]
+[Database] Fixed unexpected behaviour on a row count mismatch in db_simple.
+
+[12th March 2010]
+[Core] If a client has no username, use the nickname.
+[Core] Added the ability to mark an extension as critical.
+[Core] Server name now uses the maximum hostname length.
+[Core] Now storing a second list of channels for each user.
+[Core] Changed the way user_on_channel works.
+[Extensions] Register: Only get the channel information once we need it.
+[Extensions] Fixed a possible crash in userlist.c and resynched with codebase.
+
+[13th March 2010]
+[Extensions] Check extension is not loaded via filename, not extension name.
+[Unreal] Accidentally chopping the first character of a nickname in a whois.
+[Core] Expose server mapping functions, add const correctness, remove debug.
+[Core] Cache Ezri's path information, rather than constantly recalculating it.
+[Databases] db_simple now uses Ezri functions to determine the directory.
+
+[14th March 2010]
+[Core] Faster output of messages to users.
+[Core] Removed old debug message from message.c
+[Core] Faster, less memory-intensive way of loading and storing languages.
+[Core] Fixed a bug where the topic was not being read correctly during bursts.
+
+[15th March 2010]
+[Core] Timers with zero arguments can now determine their timer ID.
+[Core] Adding a timer is now faster and more reliable.
+[Core] Fixed a possible crash when adding an event.
+[Core] Fixed two possible crashes when adding an extension.
+[Core] Added logging to file support to Ezri.
+
+[16th March 2010]
+[Core] Don't load varargs if the logged string isn't expecting them.
+[Core] Event added for logged messages, including priority.
+[Core] drop_command with null client will drop from all clients.
+[Extensions] Added the ability to search help categories.
+
+[21st March 2010]
+[Routine] If no command exists, search the help files instead.
+[Core] Add HTML-IRC replacement for language strings.
+
+[23rd March 2010]
+[Core] Fixed a crash when Ezri is unable to connect to the IRCd.
+[Extensions] Not all written data was being imported from the nickname database
+[Core] Added preliminary support for auto-identify, pending extension updates.
+[Extensions] Ban extension did not export help for TBAN command.
+[Extensions] Fixed a bug where the unban timer would not work.
+[Routine] Check if the active client is triggered prior to looking for another.
+
+[30th March 2010]
+[Extensions] Fixed NickServ register working within channels.
+
+[3rd April 2010]
+[Extensions] Register now checks for a valid channel name first.
+[Core] valid_channel now checks the length of the channel name.
+[Core] Fixed bugs when removing a user from a channel
+
+[7th April 2010]
+[Core] Added ability to message channels using language core.
+[Core] Fixed a bug where a blank message would be sent to the IRCd.
+[Core] Renamed burst channel join event name for consistency.
+
+[9th April 2010]
+[Core] Faster chr_delete implementation (Thanks Entity)
+
+[14th April 2010]
+[Core] Routines now return 0 if no action was taken.
+[Unreal] Additional speed-ups and bug-fixes to unreal.c
+[Unreal] Fixed a bug where a services client may not join a channel.
+[Core] Command processing now continues to the next channel bot if no match.
+[Unreal] Fixed an event being fired twice for a channel join in some cases.
+
+[17th April 2010]
+[Core] Client part was either lost or never fully implemented, works now.
+[Core] Bots joining a new channel were not being registered, commands failed.
+[Core] Fix for lack of a log entry on some extension loading errors.
+[Extensions] New logging extension that reports log messages to a channel.
+[Extensions] New HelpServ extension that creates and manages a help queue.
+
+[18th April 2010]
+[Routine] Code cleanup of svs_regular.c
+[Core] Extensions were not properly removed if they requested an unload.
+[Core] translate_error now available to explain error codes.
+[Extensions] auto_ticket now defaults to on and must be disabled, not enabled.
+[Core] Minor optimisations to timer handling code.
+[Core] Timers must now be deleted by specifying the function and the event.
+[Extensions] Ban extension was trying to delete its commands from NickServ.
+[Extensions] Ban extension was not deleting its help entries on unload.
+[Core] Fixed some hostnames being banned as nicknames.
+[Extensions] TBAN command was using the BAN command's help.
+[Core] Removed useless channel_part function.
+
+
+[19th April 2010]
+[Unreal] Fixed bug where parts were not always being registered.
+[Extensions] Ban extension exported the wrong name and could not be unloaded.
+[Core] No longer possible to load extensions with the same name.
+[Extensions] TBAN command would not show help upon invalid syntax.
+
+[21st April 2010]
+[Core] Added a bot_count to track the number of services clients per channel.
+[Extensions] Fixed possible crashes in the log extension.
+[Core] Fixed a crash when deleting the last event in a list.
+[Extensions] Info extension now reports the bot count in addition to the users.
+[Language] Fixed a broken language string for "Nickname not in use".
+[Extensions] Fixed a bug with deleting channels from the auto-join list.
+[Extensions] Missing message when a channel already existed on the join list.
+[Extensions] Fixed doubling of auto-join channels on startup.
+[Extensions] Added AJOIN CLEAR and AJOIN LIST commands.
+[Extensions] Made auto-join command aware of expiring nicknames.
+[Core] Possible fix for an infinite loop within socket handling code.
+
+[23rd April 2010]
+[Core] Rewrote socket line reading code.
+
+[24th April 2010]
+[Extensions] Timed ban was never using the specified ban length.
+
+[26th April 2010]
+[Extensions] Register was not exporting the user's ident/hostname information.
+[Core] Fix a crash related to unregistering nicknames.
+[Core] Fixed a similar crash when deleting timers.
+[Core] Complete rewrite of the code that handled adding new timers.
+[Core] Timers now take the timer ID as a separate argument.
+[Core] The full timer name plus random ID is now copied.
+[Core] Fixed a potential crash when creating a new channel.
+[Core] Fixed a potential overrun with a user's "real name".
+[Core] Speed increase in some cases of getting an identified nickname.
+[Core] Wrong definition used to copy a registered username.
+[Core] Fixed a potential crash when adding a user to the access list.
+[Core] Copying of ezri->name was not using HOST_MAX definition.
+[Core] Fixed possible null-pointer dereference when processing a PRIVMSG
+[Core] Reject a timer with a value of 0 seconds.
+[Core] Fixed some potential character validation issues.
+[Core] General clean-up of e-mail validation function.
+[Core] Rare integer overflow on some systems could cause odd ban lengths.
+[Extensions] Standardised HostServ command loading.
+[Extensions] Moved vHost on identify to the identify command itself.
+[Extensions] Don't try to add the same vHost twice.
+[Extensions] Copy the "granted by" value when adding to an access list.
+[Extensions] Added several messages that were missing from the Hosts commands.
+[Extensions] Hostname loading routine rewritten to use add_host.
+[Extensions] Cleaned up some of the error handling when adding a new hostname.
+[Extensions] Fixed a bug that caused hostgroups to lose data when saved.
+
+[28th April 2010]
+[Databases] Much faster line reading after the first read.
+[Databases] Fixed a rare crash that might have arisen with empty data sets.
+[Databases] Slightly better handling of close routine.
+[Databases] No longer possible to send a negative field count to functions.
+[Extensions] Info extension shows active user's information if no parameters.
+[Databases] No longer processes anything if the column count is 0.
+[Databases] Tweaked opening and appending handler.
+[Databases] writeline now returns the number of successfully written columns.
+[Core] Fixed a possible crash when adding a command to a specific client.
+[Core] Fixed a highly improbable crash relating to adding commands.
+[Core] Removed duplicate code when deleting commands.
+[Core] Fixed a possible memory leak when adding a command to a specific client.
+[Core] All functons for adding commands are faster and use less memory.
+[Core] No longer possible to add the same help item to the same client twice.
+[Core] Adding help commands has been rewritten for speed and clarity.
+[Core] Fixed a bug when searching an empty client for a command.
+
+[30th April 2010]
+[Core] Removed duplicate function for importing a UNIX epoch timestamp.
+[Extensions] Fixed small overflow when exporting channels.
+[Core] Fixed a crash when importing an invalid timestamp.
+
+[2nd May 2010]
+[Core] Fixed an infinite loop when unloading commands.
+[Extensions] Fixed help requests receiving their own nickname as the helper.
+[Extensions] Show the right message when handling invalid help topics.
+[Extensions] Timed bans work again.
+[Extensions] Configuration option HelpServ::VoiceOnPickup was missing.
+[Core] Fixed assumed crash when a server delinks from Ezri.
+[Core] Fixed a possible memory leak if invalid parameters are fed to add_user.
+[Extensions] Fixed config.c extension passing the wrong parameters.
+[Extensions] Invite extension works again.
+[Extensions] Fixed a crash if a null pointer was passed to add_command.
+[Core] Fixed a crash on invalid parameters to add_user.
+[Core] Fixed another rare crash that could occur when adding a user.
+[Core] Improved the way Ezri tracks each user's channel presence.
+[Routines] Improved message handling in svs_regular.
+[Core] Increased the speed at which configuration files are read.
+
+[3rd May 2010]
+[Core] Rewrote large sections of configuration loading for efficiency.
+[Core] Removed needless repeat code when rehashing.
+[Core] Faster key pair retrieval.
+[Core] Faster config block retrieval.
+
+[8th May 2010]
+[Extensions] Channel access is now granted automatically on joining.
+[Core] Fixed a crash caused by a sign mismatch when adding help in some cases.
+[Core] Added wrapper function to simplify the addition of commands.
+[Core] Added wrapper function to simplify the addition of help topics.
+[Core] Fixed a crash causable by passing bad arguments to create_help.
+[Core] Allow a null parameter to be passed for the help "list" category.
+
+[9th May 2010]
+[Extensions] Help no longer seeks after a match.
+[Extensions] Fix regression - Wrong help message was displayed on no match.
+[Extensions] LOAD extension now exports help topic.
+[Extensions] Log extension no longer causes protocol to handle an invalid user.
+[Extensions] Rerote access extension's load routine for clarity using wrappers.
+[Extensions] ChanServ::enableadmins no longer controls owner status, too.
+[Extensions] Unloading the Register extension now removes the associated help.
+[Core] Additional macro definitions to configure maximum string lengths.
+[Extensions] Config extension now unloads help and unloads commands properly.
+[Extensions] Fixed confusing error message in DROP extension.
+[Extensions] INFO extension now deletes help on unload.
+[Extensions] INVITE extension now deletes help on unload.
+[Extensions] KILL extension now deletes help and commands properly on unload.
+[Extensions] Added help to LIST extension.
+[Extensions] LIST extension now deletes commands properly on unload.
+[Extensions] SAY command now deletes commands on unload.
+[Extensions] Added help text for SAY command.
+[Extensions] Changed the SAY command so that it binds to all clients.
+[Extensions] NICKPROTECT extension now deletes timers on unload.
+[Extensions] NICKPROTECT extension now deletes events on unload.
+[Extensions] Added help to MODE extension.
+[Extensions] Added USERLIST VIEW command to view the user list.
+[Extensions] USERLIST extension now deletes help.
+[Extensions] KICK extension works again.
+[Core] Removed a bad dereference from make_connection
+[Core] Fixed a display-only bug that would cause ports to trim a digit.
+
+[11th May 2010]
+[Core] Removed an attempt to load an extension that didn't exist.
+[Core] Failure loading services clients no longer needs its own error output.
+[Core] End of long Ezri server descriptions could end up truncated.
+[Core] Ezri would continue if no IRCd extension was specified in the config.
+[Core] Ezri would continue if no server name was specified.
+[Core] Ezri would continue if an invalid or missing port was specified.
+[Core] Allowed for longer messages to be logged.
+[Extensions] Log relayer will no longer relay until IRCd reports synched.
+[Core] Ezri now logs startup errors, rather than just outputting them.
+[Core] Tweaked Ezri's startup routine to take roughly half the time.
+
+[12th May 2010]
+[Core] Fixed Register extension not loading properly.
+[Core] Fixed crash when a message went through the log relayer.
+
+[13th May 2010]
+[Core] Expanded the range of possible timer IDs into the millions, was 32767.
+
+[16th May 2010]
+[Extensions] Added !roll command for D&D-syntax dice rolls.
+
+[19th May 2010]
+[Core] Added the ability to add extension data to registered channels.
+[Core] Renamed a few exported functions for consistency.
+[Extensions] Fixed help for REGISTER extension, will now attach to NickServ.
+
+[20th May 2010]
+[Core] Added case_compare_to function, and improved compare_to.
+
+[29th May 2010]
+[Core] Fixed several help documentation errors.
+
+[5th June 2010]
+[Routine] Fixed bug where PMed commands would not be interpreted.
+
+[13th June 2010]
+[Core] Fixed a bug where a user would not appear on channels properly.
+[Core] Altered svsclient block semantics - First of type is default.

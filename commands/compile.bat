@@ -1,0 +1,1 @@
+cl /W4 /LD /Zi /TC /nologo %1 ../alloc.c /link ws2_32.lib ../services.lib
